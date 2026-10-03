@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Company Log</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{
+  background:#0d14;
+  display:flex;justify-content:center;align-items:center;
+  min-height:100vh;color:white;
+}
+.container{
+  width:380px;
+  background:#1a1a25;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 0 30px rgba(0,0,0,0.5);
+  border:1px solid #2a2a3a;
+}
+h2{text-align:center;margin-bottom:20px;letter-spacing:1px}
+.tabs{display:flex;gap:10px;margin-bottom:25px}
+.tabs button{
+  flex:1;padding:10px;border-radius:25px;border:1px solid #444;
+  background:transparent;color:#aaa;cursor:pointer;transition:0.3s
+}
+.tabs button.active{
+  border-color:#00ffea;
+  box-shadow:0 0 10px #00ffea, 0 0 20px rgba(0,255,234,0.3);
+  color:#00ffea;
+}
+.input-box{position:relative;margin-bottom:18px}
+.input-box input, .input-box select{
+  width:100%;padding:13px 18px;
+  border-radius:25px;
+  border:1px solid #444;
+  background:transparent;
+  color:white;
+  outline:none;
+  transition:0.3s;
+}
+.input-box label{
+  position:absolute;left:18px;top:13px;
+  color:#777;pointer-events:none;transition:0.3s;
+  background:#1a1a25;padding:0 5px;
+}
+/* GLOW EFFECT - like your Phone box */
+.input-box input:focus, .input-box select:focus,
+.input-box input:valid, .input-box select:valid{
+  border-color:#00ffea;
+  box-shadow:0 0 10px #00ffea, 0 0 20px rgba(0,255,234,0.3);
+}
+.input-box input:focus + label,
+.input-box input:valid + label{
+  top:-8px;font-size:12px;color:#00ffea;
+}
+select option{background:#1a1a25}
+
+.btn{
+  width:100%;padding:13px;border:none;border-radius:25px;
+  background:#00ffea;color:#000;font-weight:bold;
+  cursor:pointer;margin-top:10px;
+  box-shadow:0 0 15px #00ffea;
+  transition:0.3s;
+}
+.btn:hover{box-shadow:0 0 25px #00ffea;transform:scale(1.02)}
+.form{display:none}
+.form.active{display:block}
+.small{font-size:12px;text-align:center;margin-top:15px;color:#777}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Hello company</h2>
+ 
+  <div class="tabs">
+    <button id="loginTab" class="active" onclick="showForm('login')">Login</button>
+    <button id="signupTab" onclick="showForm('signup')">Sign Up</button>
+  </div>
+
+  <!-- LOGIN -->
+  <div id="loginForm" class="form active">
+    <div class="input-box">
+      <input type="text" required>
+      <label>Full Name</label>
+    </div>
+    <div class="input-box">
+      <input type="text" required>
+      <label>Phone</label>
+    </div>
+    <button class="btn" onclick="alert('Logged in!')">Login</button>
+    <p class="small">Forgot password?</p>
+  </div>
+
+  <!-- SIGN UP -->
+  <div id="signupForm" class="form">
+    <div class="input-box">
+      <input type="text" required>
+      <label>Full Name</label>
+    </div>
+    <div class="input-box">
+      <input type="tel" required>
+      <label>Phone</label>
+    </div>
+    <div class="input-box">
+      <select required>
+        <option value="" hidden></option>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+      </select>
+      <label style="top:-8px;font-size:12px;color:#00ffea;background:#1a1a25;">Select Level</label>
+    </div>
+    <div class="input-box">
+      <input type="password" required>
+      <label>Password</label>
+    </div>
+    <button class="btn" onclick="alert('Registered!')">Create Account</button>
+  </div>
+
+</div>
+
+<script>
+function showForm(type){
+  document.getElementById('loginForm').classList.remove('active');
+  document.getElementById('signupForm').classList.remove('active');
+  document.getElementById('loginTab').classList.remove('active');
+  document.getElementById('signupTab').classList.remove('active');
+
+  if(type==='login'){
+    document.getElementById('loginForm').classList.add('active');
+    document.getElementById('loginTab').classList.add('active');
+  }else{
+    document.getElementById('signupForm').classList.add('active');
+    document.getElementById('signupTab').classList.add('active');
+  }
+}
+</script>
+
+</body>
+</html>
