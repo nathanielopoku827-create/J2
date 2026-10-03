@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military Recruitment Form</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         background-color: #e0e0d1; 
+         display: flex;
+          justify-content: center; 
+          padding: 20px; }
+        .form-container { background-color: #fff; 
+            padding: 30px; border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+            width: 100%; 
+            max-width: 600px; 
+            border-top: 5px solid #4b5320; }
+        h2 { text-align: center; 
+            color: #4b5320; 
+            text-transform: uppercase; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #333; }
+        input[type=text], input[type=email], input[type=date], select,
+         textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .radio-group { display: flex; gap: 15px; margin-top: 5px; }
+        button { width: 100%;
+             background-color: #4b5320;
+              color: white;
+               padding: 12px;
+                border: none; 
+                border-radius: 4px;
+                font-size: 16px;
+                cursor: pointer; 
+                text-transform: uppercase; }
+        button:hover { background-color: #353b17; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Armed Forces Recruitment</h2>
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+        </div>
+       
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+                <input type="radio" id="male" name="gender" value="male" required> <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female"> <label for="female">Female</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="branch">Preferred Branch</label>
+            <select id="branch" name="branch" required>
+                <option value="">--Select Branch--</option>
+                <option value="army">Army</option>
+                <option value="navy">Navy</option>
+                <option value="airforce">Air Force</option>
+                <option value="marines">Marines</option>
+                <option value="spaceforce">Space force</option>
+                <option value="nationalguard">National Guard</option>
+                <option value="coastguard">Coast Guard</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="resume">Upload Resume/CV</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc">
+        </div>
+
+        <button type="submit">Submit Application</button>
+    </form>
+</div>
+
+</body>
+</html>
